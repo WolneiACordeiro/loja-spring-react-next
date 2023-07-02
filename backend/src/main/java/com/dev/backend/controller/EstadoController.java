@@ -2,7 +2,6 @@ package com.dev.backend.controller;
 
 import com.dev.backend.entity.Estado;
 import com.dev.backend.service.EstadoService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +19,12 @@ public class EstadoController {
         return estadoService.buscarTodos();
     }
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado){
-        return estadoService.inserir(estado);
+    public Estado inserir(@RequestBody Estado objeto){
+        return estadoService.inserir(objeto);
     }
     @PutMapping("/")
-    public Estado alterar(@RequestBody Estado estado){
-        return estadoService.alterar(estado);
+    public Estado alterar(@RequestBody Estado objeto){
+        return estadoService.alterar(objeto);
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id){

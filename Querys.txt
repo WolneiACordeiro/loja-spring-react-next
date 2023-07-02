@@ -1,0 +1,40 @@
+//ESTADO
+{
+	"nome" : "São Paulo",
+	"sigla" : "SP"
+}
+
+//CIDADE
+{
+	"nome" : "Registro",
+	"estado" : {"id":1}
+}
+
+//PESSOA
+{
+  "id": 4,
+  "nome": "Ribamar",
+  "cpf": null,
+  "email": null,
+  "senha": null,
+  "endereco": null,
+  "cep": null,
+  "cidade": null,
+  "dataCriacao": "2023-06-30T19:14:05.5329814",
+  "dataAtualizacao": null
+}
+
+//PERMISSAO
+{
+  "nome" : "Ribamar"
+}
+
+//PERMISSAO_PESSOA
+{
+  "nome" : "Ribamar",
+  "permissaoPessoas":[
+    {
+      "permissao" : {"id" : 1}
+    }
+    ]
+}
