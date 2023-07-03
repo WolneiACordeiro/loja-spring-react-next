@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class PessoaClienteService {
@@ -23,7 +25,10 @@ public class PessoaClienteService {
         pessoa.setDataCriacao(LocalDateTime.now());
         Pessoa objetoNovo = pessoaRepository.saveAndFlush(pessoa);
         permissaoPessoaService.vincularPessoaPermissaoCliente(objetoNovo);
-        emailService.enviarEmailTexto(objetoNovo.getEmail(), "Cadastro na Loja 1618", "O registro na loja foi realizado com sucesso! Em breve você receberá a senha de acesso por e-mail!");
+        Map<String, Object> proprMap = new HashMap<>();
+        proprMap.put("nome", objetoNovo.getNome());
+        proprMap.put("mensagem", "O registro na loja foi realizado com sucesso! Em breve você receberá a senha de acesso por e-mail!");
+        emailService.enviarEmailTemplate(objetoNovo.getEmail(), "Cadastro na Loja 1618", proprMap);
         return objetoNovo;
     }
 

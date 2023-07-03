@@ -1,11 +1,13 @@
 package com.dev.backend.entity;
 
 import jakarta.persistence.*;
+import jdk.jfr.Timestamp;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -22,6 +24,11 @@ public class Pessoa {
     private String cpf;
 
     private String email;
+
+    private String codigoRecuperacaoSenha;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataEnvioCodigo;
 
     private String senha;
 
