@@ -26,7 +26,7 @@
 
 //PERMISSAO
 {
-  "nome" : "Ribamar"
+  "nome" : "cliente"
 }
 
 //PERMISSAO_PESSOA
@@ -37,4 +37,10 @@
       "permissao" : {"id" : 1}
     }
     ]
+}
+
+//CLIENTE
+{
+  "nome" : "Wolnei",
+  "email" : "wolneicordeiro@gmail.com"
 }
